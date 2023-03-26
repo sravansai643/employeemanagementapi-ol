@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <style>
+body {
+	background-color: #f1eaef;
+}
+</style>
+  <meta charset="UTF-8">
+  <title>Employee Management System</title>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body style="max-width: 960px; margin: 16px auto; padding: 16px">
+<h3>Update Employee</h3>
+
+<form th:action="@{/updateEmployee}" th:object="${employee}"
+      th:method="put">
+  <div class="row">
+    <div class="input-field col s6">
+      <input id="eno" type="number" class="validate" th:field="*{eno}"
+             required> <label for="eno">Employee Number</label>
+    </div>
+    <div class="input-field col s6">
+      <input id="first_name" type="text" class="validate"
+             th:field="*{name}" required> <label for="first_name">Employee
+      Name</label>
+    </div>
+    <!--<div class="input-field col s6">
+    <input id="gender" type="text" class="validate"
+           th:field="*{gender}" required> <label for="gender">Gender
+</label>
+</div>-->
+  </div>
+  <div class="row">
+    <div class="input-field col s6">
+      <input id="sal" type="number" class="validate" th:field="*{sal}"
+             required> <label for="sal">Salary</label>
+    </div>
+  </div>
+  <br>
+  <button type="submit" class="waves-effect waves-light btn">Update
+    Employee</button>
+</form>
+<br>
+<a th:href="@{/}" class="blue-text">Back</a>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Management System</title>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <style>
+body {
+	background-color: #f1eaef;
+}
+</style>
+  <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body style="max-width: 960px; margin: 16px auto; padding: 16px">
+<h3>Add New Employee</h3>
+<form th:action="@{/saveEmployee}" th:object="${employee}"
+      method="post">
+  <div class="row">
+    <div class="input-field col s6">
+      <input id="first_name" type="text" class="validate"
+             th:field="*{name}" required> <label for="first_name">Employee
+      Name</label>
+    </div>
+
+    <div class="input-field col s6">
+      <input id="gender" type="text" class="validate" th:field="*{gender}"
+             required>
+      <!--            <input id="gender1" type="text" class="validate" th:field="*{gender}" value="female"  required>-->
+      <label for="gender">Gender </label>
+    </div>
+
+
+    <!--<div class="row">
+<div>
+    <label for="gender">Gender:</label>
+    <input type="radio" th:field="*{gender}" th:value="Male" th:text="Male" />
+    <input type="radio" th:field="*{gender}" th:value="Female" th:text="Female" />
+</div>
+</div>-->
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="sal" type="number" class="validate" th:field="*{sal}"
+               required> <label for="sal">Salary</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="doj" type="date" class="validate" th:field="*{doj}"
+               placeholder="yyyy-MM-dd" required> <label for="sal">DOJ</label>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="waves-effect waves-light btn">Add
+    Employee</button>
+</form>
+<br>
+<a th:href="@{/}" class="blue-text">Back</a>
+
+</body>
+</html>

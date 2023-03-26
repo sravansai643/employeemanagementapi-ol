@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Management System</title>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <style>
+body {
+	background-color: #f1eaef;
+}
+</style>
+  <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+
+<body style="max-width: 960px; margin: 16px auto; padding: 16px">
+<h3>Get Employee</h3>
+<form th:action="@{/getEmployee}" th:object="${employee}" method="get">
+  <div class="row">
+    <div class="input-field col s6">
+      <input id="employee_no" type="Number" class="validate"
+             th:value="${eno}" th:name="eno" min="1" max="100" required>
+      <label for="employee_no">Enter Employee Number</label>
+    </div>
+    <br> <input type="submit" value="Get Employee">
+  </div>
+</form>
+<br>
+<a th:href="@{/}" class="blue-text">Back</a>
+</body>
+</html>

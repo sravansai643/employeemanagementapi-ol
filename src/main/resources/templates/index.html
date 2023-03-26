@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Employee Management System</title>
+  <style>
+body
+{
+	background-color: #f1eaef;
+}
+</style>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+</head>
+<body style="background-color: lightblue">
+
+<!-- create navigation bar ( header) -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed"
+              data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+              aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span> <span>
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+              class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#" th:href="@{/}">Employee
+        Management System</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+<div>
+  <img th:src="@{/quest.jpeg}">
+
+
+</div>
+<br>
+<br>
+<div class="container my-2">
+  <h1>Welcome to Quest Global</h1>
+  <br> <a th:href="@{/showNewEmployeeForm}"
+          class="btn btn-primary btn-sm mb-6"> Add Employee </a> <a
+        th:href="@{/update_employeeForm}" class="btn btn-primary btn-sm mb-6">
+  Update Employee </a> <a th:href="@{/delete_employeeForm}"
+                          class="btn btn-primary btn-sm mb-6"> Delete Employee </a> <a
+        th:href="@{/getAllEmployees}" class="btn btn-primary btn-sm mb-6">
+  Employee List </a> <a th:href="@{/get_employeeForm}"
+                        class="btn btn-primary btn-sm mb-6"> Get Employee </a>
+</div>
+<br>
+<div>
+
+  <p
+          style="max-width: 900px; margin: 5px auto; padding: 16px; font-size: 17px">
+    <b>We are Quest Global. We?re in the business of engineering, but
+      what we?re really building is a brighter future. It?s not just what
+      we do, but why we do it that makes us different. We believe
+      engineering has the unique opportunity to solve the problems of
+      today that stand in the way of tomorrow. For 25 years, we have
+      strived to be the most trusted partner for the world?s hardest
+      engineering problems. As a global organization headquartered in
+      Singapore, we live and work in 17 countries, with 56 global delivery
+      centers, driven by 13,000+ extraordinary employees who make the
+      impossible possible every day. Quest Global brings deep industry
+      knowledge and digital expertise to deliver E2E global product
+      engineering services. We bring together technologies and industries
+      alongside the contributions of diverse individuals and their areas
+      of expertise to solve problems better, faster. This
+      multi-dimensional approach enables us to solve the most important
+      and large-scale challenges across the Aerospace & Defense,
+      Automotive, Energy, Hi-Tech, Healthcare, Medical Devices, Rail and
+      Semiconductor industries.</b>
+  </p>
+</div>
+</body>
+</html>
+
